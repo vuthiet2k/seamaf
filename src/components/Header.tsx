@@ -43,12 +43,23 @@ const Header = () => {
         >
           RVM SeaMaf
         </Typography>
-        <InputSearch
-          placeholder="Search on RVM SeaMaf ...."
-          value={search}
-          onChange={(e) => handlerChangeSearch(e)}
-          onKeyDown={handlerKeyDown}
-        />
+        <Box
+          sx={{
+            m: 0,
+            p: 0,
+            display: {
+              xs: "none",
+              md: "flex",
+            },
+          }}
+        >
+          <InputSearch
+            placeholder="Search on RVM SeaMaf ...."
+            value={search}
+            onChange={(e) => handlerChangeSearch(e)}
+            onKeyDown={handlerKeyDown}
+          />
+        </Box>
         <Box>
           <HeadUser />
         </Box>
@@ -56,9 +67,10 @@ const Header = () => {
     </Box>
   );
 };
-
+export default React.memo(Header);
 const InputSearch = styled("input")({
-  maxWidth: "500px",
+  maxWidth: "530px",
+  minWidth: "500px",
   width: "100%",
   height: "44px",
   fontSize: "14px",
@@ -70,5 +82,3 @@ const InputSearch = styled("input")({
   color: "#000",
   fontFamily: "cursive",
 });
-
-export default React.memo(Header);

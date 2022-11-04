@@ -18,7 +18,9 @@ const HeadUser = () => {
     setAge(event.target.value);
   };
   return (
-    <Stack direction="row" spacing={1}>
+    <Stack direction="row" spacing={1} sx={{display: {
+      xs: "none", md: "flex"
+    }}}>
       <FormControl sx={{ width: "145px", fontSize: "14px" }}>
         <Select
           sx={{
