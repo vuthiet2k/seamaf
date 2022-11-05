@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ProductType } from "../@type/productType";
 
-const initialState: ProductType[] = [
+const initialState: any[] = [
   {
     id: 1,
     code: "xxx",
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "https://www.seamaf.com/storage/products/617/PmHvUsij2eMb6w.webp",
     is_top: 0,
@@ -21,7 +21,7 @@ const initialState: ProductType[] = [
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "/images/example/sp0.webp",
     is_top: 1,
@@ -34,7 +34,7 @@ const initialState: ProductType[] = [
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "/images/example/sp0.webp",
     is_top: 0,
@@ -47,7 +47,7 @@ const initialState: ProductType[] = [
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "/images/example/sp0.webp",
     is_top: 0,
@@ -60,7 +60,7 @@ const initialState: ProductType[] = [
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "/images/example/sp0.webp",
     is_top: 0,
@@ -73,7 +73,7 @@ const initialState: ProductType[] = [
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "/images/example/sp0.webp",
     is_top: 0,
@@ -86,7 +86,7 @@ const initialState: ProductType[] = [
     name: "sp1",
     description: "string stringstring string string",
     category: "string",
-    price: 100000,
+    price: "100000",
     sale: 30,
     image: "/images/example/sp0.webp",
     is_top: 0,
@@ -98,6 +98,5 @@ const initialState: ProductType[] = [
 export const ProductSlice = createSlice({
   name: "latest product",
   initialState,
-  reducers: {
-  },
+  reducers: {},
 });
