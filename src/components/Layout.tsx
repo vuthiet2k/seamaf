@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import Header from "./Header";
-import NavigateToPages from "./NavigateToPage";
+import Header from "./header/Header";
+import NavigateToPages from "./header/NavigateToPage";
 
 const Layout = () => {
   return (

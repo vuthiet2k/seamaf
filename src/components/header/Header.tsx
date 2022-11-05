@@ -51,6 +51,7 @@ const Header = () => {
               xs: "none",
               md: "flex",
             },
+            width: { xl: "500px"}
           }}
         >
           <InputSearch
@@ -69,8 +70,6 @@ const Header = () => {
 };
 export default React.memo(Header);
 const InputSearch = styled("input")({
-  maxWidth: "530px",
-  minWidth: "500px",
   width: "100%",
   height: "44px",
   fontSize: "14px",

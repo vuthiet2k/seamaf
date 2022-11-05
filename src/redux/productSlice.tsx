@@ -10,7 +10,7 @@ const initialState: ProductType[] = [
     category: "string",
     price: 100000,
     sale: 30,
-    image: "/images/example/sp0.webp",
+    image: "https://www.seamaf.com/storage/products/617/PmHvUsij2eMb6w.webp",
     is_top: 0,
     created_at: "string",
     updated_at: "string",
@@ -95,10 +95,9 @@ const initialState: ProductType[] = [
   },
 ];
 
-const productSlice = createSlice({
-    name: 'product',
-    initialState,
-    reducers: {
-        
-    }
-})
+export const ProductSlice = createSlice({
+  name: "latest product",
+  initialState,
+  reducers: {
+  },
+});
