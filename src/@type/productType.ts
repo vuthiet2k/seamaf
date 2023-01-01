@@ -14,7 +14,7 @@ export type ProductType = {
   isHovered: boolean;
   isLiked: boolean;
   rating: number;
-  id: number;
+  _id: string;
   cover: string;
   footage: string[];
 };

@@ -2,8 +2,10 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import HeadUser from "./HeadUser";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = React.useState("");
   const handlerChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -13,14 +15,18 @@ const Header = () => {
       // handlerClickSearch();
     }
   };
+  const handlerClickHome = () => {
+    navigate('/');
+  }
   return (
     <Box
       sx={{
         height: "44px",
         mt: "18px",
-        mb: "14px",
+        pb: "14px",
         display: "flex",
         alignItems: "center",
+        backgroundColor: "#fff"
       }}
     >
       <Container
@@ -32,7 +38,7 @@ const Header = () => {
         }}
       >
         <Typography
-          // onClick={}
+          onClick={handlerClickHome}
           variant="h4"
           sx={{
             fontSize: "24px",

@@ -1,9 +1,8 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { ProductType } from "../../@type/productType";
 import Product from "./Product";
-
-const LastProduct = () => {
-  const listLastProduct: ProductType[] = [
+const TopSelling = () => {
+  const listSellingProduct: ProductType[] = [
     {
       name: "Cyberpunk 2077",
       surname: "cyberpunk",
@@ -196,41 +195,19 @@ const LastProduct = () => {
           align="center"
           sx={{ fontSize: "20px", fontWeight: "900", mb: "18px" }}
         >
-          LATEST PRODUCT
+          BROWSE TOP SELLING PRODUCTS
         </Typography>
         <Grid container spacing={2}>
-          <Grid item xs={6} md={4} xl={3}>
-            <Product
-              name={listLastProduct[0].name}
-              img={listLastProduct[0].cover}
-              price={listLastProduct[0].price}
-            />
-          </Grid>
-          <Grid item xs={6} md={4} xl={3}>
-            <Product
-              name={listLastProduct[1].name}
-              img={listLastProduct[1].cover}
-              price={listLastProduct[1].price}
-            />
-          </Grid>
-          <Grid item xs={6} md={4} xl={3}>
-            <Product
-              name={listLastProduct[2].name}
-              img={listLastProduct[2].cover}
-              price={listLastProduct[2].price}
-            />
-          </Grid>
-          <Grid item xs={6} md={4} xl={3}>
-            <Product
-              name={listLastProduct[3].name}
-              img={listLastProduct[3].cover}
-              price={listLastProduct[3].price}
-            />
-          </Grid>
+          {listSellingProduct.map((item, id) => {
+            return (
+              <Grid key={id} item xs={6} md={4} xl={3}>
+                <Product name={item.name} img={item.cover} price={item.price} />
+              </Grid>
+            );
+          })}
         </Grid>
       </Container>
     </Box>
   );
 };
-
-export default LastProduct;
+export default TopSelling;

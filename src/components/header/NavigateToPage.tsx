@@ -1,13 +1,11 @@
-import { Box, Button, Container, styled, Typography } from "@mui/material";
+import { Box, Container, keyframes, styled, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const NavigateToPages = () => {
   let navigate = useNavigate();
-
   const createData = (name: string, link: string) => {
     return { name, link };
   };
-
   const ListOurShop = [
     createData("Beads", "/"),
     createData("Beading Wires And Threads", "/"),
@@ -49,9 +47,13 @@ const NavigateToPages = () => {
           },
         }}
       >
-        <ButtonHover onClick={() => {
+        <ButtonHover
+          onClick={() => {
             navigate("/");
-          }}>Home</ButtonHover>
+          }}
+        >
+          Home
+        </ButtonHover>
         <ButtonHover
           sx={{
             position: "relative",
@@ -60,6 +62,9 @@ const NavigateToPages = () => {
               flexDirection: "column",
               zIndex: 1,
             },
+          }}
+          onClick={() => {
+            navigate("/shop");
           }}
         >
           Our Shop
@@ -84,7 +89,12 @@ const NavigateToPages = () => {
             })}
           </BoxOutShop>
         </ButtonHover>
-        <ButtonHover sx={{ position: "relative" }}>
+        <ButtonHover
+          sx={{ position: "relative" }}
+          onClick={() => {
+            navigate("/sale");
+          }}
+        >
           On Sale
           <Box
             sx={{
@@ -106,8 +116,20 @@ const NavigateToPages = () => {
             SALE
           </Box>
         </ButtonHover>
-        <ButtonHover>Our Services</ButtonHover>
-        <ButtonHover>Blog</ButtonHover>
+        <ButtonHover
+          onClick={() => {
+            navigate("/our-services");
+          }}
+        >
+          Our Services
+        </ButtonHover>
+        <ButtonHover
+          onClick={() => {
+            navigate("/blog");
+          }}
+        >
+          Blog
+        </ButtonHover>
         <ButtonHover
           onClick={() => {
             navigate("contact");
@@ -115,14 +137,36 @@ const NavigateToPages = () => {
         >
           Contact
         </ButtonHover>
-        <ButtonHover>SignIn</ButtonHover>
-        <ButtonHover>SignUp</ButtonHover>
+        <ButtonHover
+          onClick={() => {
+            navigate("/log-in");
+          }}
+        >
+          SignIn
+        </ButtonHover>
+        <ButtonHover
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
+          SignUp
+        </ButtonHover>
       </Container>
     </Box>
   );
 };
 
 export default NavigateToPages;
+const amiBoxOurShop = keyframes`
+0%{
+  opacity: 0.7;
+  transform: scale(0.9);
+}
+100% {
+  opacity: 1;
+  transform: scale(1);
+}
+`;
 const BoxOutShop = styled("div")({
   display: "none",
   backgroundColor: "#fff",
@@ -141,8 +185,9 @@ const BoxOutShop = styled("div")({
     textDecoration: "none",
     lineHeight: 1,
   },
+  animation: `${amiBoxOurShop} 0.2s linear`,
+  zIndex: 1,
 });
-
 const ButtonHover = styled("button")({
   height: "100%",
   padding: "0",

@@ -78,6 +78,7 @@ const Footer = () => {
           backgroundColor: "#282828",
           display: "flex",
           alignItems: "center",
+          pt: "15px"
         }}
       >
         <Container

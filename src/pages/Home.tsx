@@ -13,6 +13,7 @@ import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import imgBg1 from "../assets/BGeventmanagement.webp";
 import imgBg2 from "../assets/imgBg2.png";
 import LastProduct from "../components/product/LastProduct";
+import TopSelling from "../components/product/TopSelling";
 
 const Home = () => {
   return (
@@ -126,6 +127,7 @@ const Home = () => {
         </GridCus>
       </Grid>
       <LastProduct />
+      <TopSelling />
     </>
   );
 };
