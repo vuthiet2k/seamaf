@@ -71,7 +71,6 @@ const LogIn = () => {
                   autoFocus
                   onChange={(e) => {
                     setEmail(e.target.value);
-                    console.log(email);
                   }}
                 />
                 <TextField

@@ -13,21 +13,34 @@ import {
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import API from "../useHook/api";
+import { notifySuccess } from "../components/toast";
 
 const Register = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const handleSubmitSignIn = () => {
+    API()
+      .postJson("users", {
+        name: name,
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        if (res) {
+          notifySuccess("Chuyển tới trang đăng nhập");
+          setTimeout(() => {
+            navigate("/log-in");
+          }, 2000);
+        }
+      });
+  };
   return (
     <Box>
       <Container>
-        <Grid
-          container
-          component="main"
-          p={8}
-          spacing={2}
-        >
+        <Grid container component="main" p={8} spacing={2}>
           <Grid
             item
             xs={false}
@@ -124,7 +137,7 @@ const Register = () => {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
-                  onClick={() => {}}
+                  onClick={handleSubmitSignIn}
                 >
                   Sign Up
                 </Button>

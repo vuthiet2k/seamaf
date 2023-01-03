@@ -3,20 +3,22 @@ import axios from "axios";
 import React from "react";
 import { ProductType } from "../@type/productType";
 import Product from "../components/product/Product";
+import API from "../useHook/api";
 
 const ShowProducts = function () {
   const [isLoading, setLoading] = React.useState(true);
   const [products, setDataProducts] = React.useState([]);
 
   React.useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/products")
+    API()
+      .get("products")
       .then(function (response) {
-        setDataProducts(response.data);
+        setDataProducts(response);
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
+        setLoading(false);
       });
   }, []);
 

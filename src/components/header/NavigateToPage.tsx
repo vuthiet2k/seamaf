@@ -1,5 +1,6 @@
 import { Box, Container, keyframes, styled, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { notifySuccess } from "../toast";
 
 const NavigateToPages = () => {
   let navigate = useNavigate();
@@ -92,7 +93,8 @@ const NavigateToPages = () => {
         <ButtonHover
           sx={{ position: "relative" }}
           onClick={() => {
-            navigate("/sale");
+            // navigate("/sale");
+            notifySuccess("Chưa xử lý!!!");
           }}
         >
           On Sale

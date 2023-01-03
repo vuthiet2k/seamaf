@@ -1,8 +1,9 @@
 import { Button, Container, Grid, TextField, Typography } from "@mui/material";
-import axios from "axios";
 import React from "react";
 import Header from "../../components/header/Header";
 import NavbarAdmin from "../../components/NavBarAdmin";
+import { notifyError, notifySuccess } from "../../components/toast";
+import API from "../../useHook/api";
 
 const AddProduct = function () {
   const [file, setFile] = React.useState();
@@ -32,14 +33,15 @@ const AddProduct = function () {
       price: price,
       // image: file,
     };
-    console.log(formPost);
-    axios
-      .post("http://localhost:3000/api/products", formPost)
+    API()
+      .postJson("products", formPost)
       .then(function (response) {
         console.log(response);
+        notifySuccess("Đã thêm mới sản phẩm!");
       })
       .catch(function (error) {
         console.log(error);
+        notifyError("Thêm mới sản phẩm thất bại!");
       });
   };
   return (
